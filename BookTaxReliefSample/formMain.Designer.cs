@@ -166,7 +166,7 @@ namespace BookTaxReliefSample
             this.Controls.Add(this.btnGetDaily);
             this.Controls.Add(this.btnGetPolicyExpiryDate);
             this.Name = "formMain";
-            this.Text = "Form1";
+            this.Text = "Book Tax Relief API Client Sample";
             this.ResumeLayout(false);
             this.PerformLayout();
 
