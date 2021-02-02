@@ -13,7 +13,6 @@ namespace BookTaxReliefSample
         private readonly string appId = ConfigurationManager.AppSettings["App_Id"];
         private readonly string appURI = ConfigurationManager.AppSettings["App_URI"];
 
-
         public formMain() => InitializeComponent();
 
         private void btnGetPolicyExpiryDate_Click(object sender, EventArgs e)
@@ -123,9 +122,9 @@ namespace BookTaxReliefSample
                 using (TaxReliefClient reliefClient = new TaxReliefClient(appId: appId))
                 {
 
-                    List<IsbnObject> response = reliefClient.GetMultiIsbn(txtParameter.Text);
+                    List<IsbnObject> isbns = reliefClient.GetMultiIsbn(txtParameter.Text);
                     string resultMessage = $"ISBN認可公告\r\n=======================================================\r\n";
-                    foreach (IsbnObject isbn in response)
+                    foreach (IsbnObject isbn in isbns)
                         resultMessage += $"{IsbnMessage(isbn)}\r\n";
 
                     txtResult.Text = resultMessage;
@@ -152,9 +151,9 @@ namespace BookTaxReliefSample
             {
                 using (TaxReliefClient reliefClient = new TaxReliefClient(appId: appId))
                 {
-                    List<EanObject> response = reliefClient.GetMultiEan(txtParameter.Text);
+                    List<EanObject> eans = reliefClient.GetMultiEan(txtParameter.Text);
                     string resultMessage = $"EAN認可公告\r\n=======================================================\r\n";
-                    foreach (EanObject ean in response)
+                    foreach (EanObject ean in eans)
                         resultMessage += $"{EanMessage(ean)}\r\n";
 
                     txtResult.Text = resultMessage;
