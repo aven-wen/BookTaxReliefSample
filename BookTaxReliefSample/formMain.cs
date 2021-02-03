@@ -19,7 +19,7 @@ namespace BookTaxReliefSample
         {
             try
             {
-                using (TaxReliefClient reliefClient = new TaxReliefClient(appId: appId))
+                using (TaxReliefClient reliefClient = new TaxReliefClient(uri: appURI, appId: appId))
                     txtResult.Text = (reliefClient.GetExpiryDate()).ToString("yyyy/MM/dd");
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -109,7 +109,7 @@ namespace BookTaxReliefSample
         {
             try
             {
-                using (TaxReliefClient reliefClient = new TaxReliefClient(appId: appId))
+                using (TaxReliefClient reliefClient = new TaxReliefClient(uri: appURI, appId: appId))
                     txtResult.Text = $"==================== 書籍資訊 ====================\r\n{IsbnMessage(reliefClient.GetIsbn(txtParameter.Text))}\r\n";
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -119,7 +119,7 @@ namespace BookTaxReliefSample
         {
             try
             {
-                using (TaxReliefClient reliefClient = new TaxReliefClient(appId: appId))
+                using (TaxReliefClient reliefClient = new TaxReliefClient(uri: appURI, appId: appId))
                 {
 
                     List<IsbnObject> isbns = reliefClient.GetMultiIsbn(txtParameter.Text);
@@ -139,7 +139,7 @@ namespace BookTaxReliefSample
         {
             try
             {
-                using (TaxReliefClient reliefClient = new TaxReliefClient(appId: appId))
+                using (TaxReliefClient reliefClient = new TaxReliefClient(uri: appURI, appId: appId))
                     txtResult.Text = EanMessage(reliefClient.GetEan(txtParameter.Text));
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -149,7 +149,7 @@ namespace BookTaxReliefSample
         {
             try
             {
-                using (TaxReliefClient reliefClient = new TaxReliefClient(appId: appId))
+                using (TaxReliefClient reliefClient = new TaxReliefClient(uri: appURI, appId: appId))
                 {
                     List<EanObject> eans = reliefClient.GetMultiEan(txtParameter.Text);
                     string resultMessage = $"EAN認可公告\r\n=======================================================\r\n";

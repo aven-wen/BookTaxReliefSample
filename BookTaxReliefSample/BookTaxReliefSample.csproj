@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BookTaxRelief, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6b0e919727dd8d76, processorArchitecture=MSIL">
-      <HintPath>..\packages\BookTaxRelief.Client.1.0.5\lib\netstandard2.0\BookTaxRelief.dll</HintPath>
+      <HintPath>..\packages\BookTaxRelief.Client.1.0.6\lib\netstandard2.0\BookTaxRelief.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
